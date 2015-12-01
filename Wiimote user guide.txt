@@ -1,0 +1,42 @@
+Connection process (Getho style) :
+Windows 8 :
+1 - Go to configuration panel/devices and printers. Remove anything that is either unknown/unidentified device, or a wiimote or game controller.
+2 - Turn on your bluetooth. (Go to metro / moden UI, search for "bluetooth", go to bluetooth settings, turn on bluetooth). Don't close that window.
+3 - Turn on your wiimote on by pressing the 1 and 2 buttons. From this point onward, press the 1 and 2 button every second UNTIL THIS GUIDE SAYS SO.
+4 - The wiimote should now appear in the bluetooth settings window, as Nintendo CRVLT something, or as unidentified device. Select it, and start the connection.
+	4.1 - Windows may ask you for a code. Leave it blank and click "next".
+5 - After a few seconds, windows will display that the wiimote connected. However, it ISN'T connected to the VRPN tracker yet. So keep pressing those buttons.
+	5.1 - If it doesn't connect at this point, hit the forums and try to figure out why. The problem probably comes your bluetooth drivers or hardware.
+6 - Launch the VRPN wiimote head tracker.
+7 - You should feel the wiimote vibrating quickly, and the wiimote led 1 should turn on with all others turned off.
+8 - Check the wiimote head tracker window : if you see values have changed, like battery level, position, etc, congratulations! You are now correctly connected to the tracker.
+	8.1 - That means you can stop mashing the buttons.
+	
+If at any point in this procedure something goes wrong, you need to REMOVE the wiimote from your computer completely. Go to devices and printers, right click on the wiimote, and remove it.
+If you do not entirely remove the wiimote, then you'll never be able to reconnect to the VRPN tracker (no idea why)
+
+
+Wiimote vrpn configuration : 
+1 - place the wiimote beneath/below your screen. 
+2 - Rotate it so that it points toward you.
+3 - Stand up in front of your screen
+4 - Rotate the wiimote so that it points directly at your eyes
+5 - Place the glasses with the LEDs on your head, and turn the LEDs on.
+
+Now we need to calibrate the wiimote. Launch the middleVrConfigurator.
+1 - Go to the devices tab, click the +, and add a VRPN tracker.
+2 - Go to the 3DNodes tab, in the Nodes select the HandNode, and set its tracker has "TheNameOfYourTracker". Should be something like VRPNTracker0.
+3 - You should now see a 3D gizmo moving on screen. We will now check it is correctly calibrated.
+	3.1 Move to your right. The gizmo should move right, in the direction of the red axis.
+	3.2 Move towards your screen. The gizmo should move forward, in the direction of the green axis.
+	3.3 Jump. The gizmo should jump, in the direction of the blue axis.
+4 - If any of the above points failed : you need to calibrate it by hand. By looking at the values of XLocal, YLocal and ZLocal, determine your up, right, and front vectors.
+5 - Then go back to devices, remove the vrpn tracker, and add it again but this time in the popup specify the axis manually
+
+Our configuration is : 
+VRPN Tracker : 
+Right +x
+Forward -z
+Up +y
+
+
