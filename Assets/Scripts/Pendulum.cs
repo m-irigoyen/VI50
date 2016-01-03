@@ -14,18 +14,21 @@ public class Pendulum : MonoBehaviour {
 
     void Start()
     {
+        
+
         this.swinging = true;
         if (this.lateral)
         {
             qStart = Quaternion.AngleAxis(angle, Vector3.right);
             qEnd = Quaternion.AngleAxis(-angle, Vector3.right);
+            //qStart = Quaternion.AngleAxis(angle, Vector3.right);
+            //qEnd = Quaternion.AngleAxis(-angle, Vector3.right);
         }
         else
         {
-            qStart = Quaternion.AngleAxis(angle, Vector3.forward);
-            qEnd = Quaternion.AngleAxis(-angle, Vector3.forward);
+            qStart = Quaternion.AngleAxis(angle, new Vector3(0,0,1));
+            qEnd = Quaternion.AngleAxis(-angle, new Vector3(0, 0, 1));
         }
-        
     }
 
     void Update()
@@ -34,6 +37,7 @@ public class Pendulum : MonoBehaviour {
         {
             startTime += Time.deltaTime;
             transform.rotation = Quaternion.Lerp(qStart, qEnd, (Mathf.Sin(startTime * speed) + 1.0f) / 2.0f);
+            //transform.right = new Vector3(0, 0, 1);
         }
         if (this.swinging == false)
         {
