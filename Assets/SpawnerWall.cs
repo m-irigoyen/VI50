@@ -20,9 +20,7 @@ public class SpawnerWall : MonoBehaviour {
 	    if(other.name == "airplane_01")
         {
             //The plane has reached this wall: we have to spawn a new tile
-
-            Debug.Log("collision with plane");
-
+            
             //Spawn a new tile after this one
             Vector3 newPos = new Vector3(this.transform.parent.Find("Anchor").transform.position.x,
                                         this.transform.parent.Find("Anchor").transform.position.y,
