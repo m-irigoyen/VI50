@@ -33,6 +33,7 @@ public class MazeBall : MonoBehaviour {
         if (other.gameObject.tag == "wall")
         {
             this.setActive(false);
+            //TODO : bruit d'échec
         }
     }
 
@@ -41,6 +42,11 @@ public class MazeBall : MonoBehaviour {
         if (other.gameObject.name == "StartZone")
         {
             this.setActive(true);
+        }
+        else if (other.gameObject.name == "FinishZone")
+        {
+            //TODO: afficher quelque chose, faire un bruit, j'en sais rien
+            this.setActive(false);
         }
     }
 
