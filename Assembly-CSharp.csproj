@@ -109,7 +109,16 @@
      <Compile Include="Assets\MiddleVR\Scripts\Samples\VRVirtualTrackerSimulation.cs" />
      <Compile Include="Assets\MiddleVR\Scripts\Samples\VRZSpaceUsageSample.cs" />
      <Compile Include="Assets\MovingLand.cs" />
+     <Compile Include="Assets\RollController.cs" />
+     <Compile Include="Assets\Scripts\ChangScenes.cs" />
+     <Compile Include="Assets\Scripts\Maze\MazeBall.cs" />
      <Compile Include="Assets\Scripts\Pendulum.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterBall.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterColors.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterGamemode.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterPaddleChild.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterReceptor.cs" />
+     <Compile Include="Assets\Scripts\Sorter\SorterSpawner.cs" />
      <Compile Include="Assets\SpawnerWall.cs" />
      <None Include="Assets\MiddleVR\Assets\Materials\VR3DTextShader.shader" />
      <None Include="Assets\MiddleVR\Assets\Materials\AlphaSelfIllum.shader" />
