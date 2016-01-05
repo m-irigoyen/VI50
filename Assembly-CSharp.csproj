@@ -6,7 +6,7 @@
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
 	<RootNamespace></RootNamespace>
-	<ProjectGuid>{CFA39803-63CF-6CF3-4A81-8AF12BA97CC9}</ProjectGuid>
+	<ProjectGuid>{3F0F70BB-4020-14DB-C586-C9E3CA55BB58}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<AssemblyName>Assembly-CSharp</AssemblyName>
@@ -125,17 +125,23 @@
      <None Include="Assets\MiddleVR\Assets\Materials\VRRiftDK2DistortionMesh.shader" />
      <None Include="Assets\MiddleVR\Assets\Materials\OVRLensCorrection.shader" />
      <None Include="Assets\MiddleVR\Assets\Materials\ScreenProximityWarningShader.shader" />
+ <Reference Include="UnityEngine.Advertisements">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/UnityEngine.Advertisements.dll</HintPath>
+ </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
+ <Reference Include="UnityEngine.Analytics">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+ </Reference>
  <Reference Include="MiddleVR_dotNet">
- <HintPath>D:/Unity/Head Tracking/Assets/MiddleVR/MiddleVR_dotNet.dll</HintPath>
+ <HintPath>C:/Edrevan/Projects/School/VI50/Assets/MiddleVR/MiddleVR_dotNet.dll</HintPath>
  </Reference>
  <Reference Include="MiddleVR_Unity3D">
- <HintPath>D:/Unity/Head Tracking/Assets/MiddleVR/MiddleVR_Unity3D.dll</HintPath>
+ <HintPath>C:/Edrevan/Projects/School/VI50/Assets/MiddleVR/MiddleVR_Unity3D.dll</HintPath>
  </Reference>
  <Reference Include="Mono.Cecil">
  <HintPath>C:/Program Files/Unity/Editor/Data/Managed/Mono.Cecil.dll</HintPath>
