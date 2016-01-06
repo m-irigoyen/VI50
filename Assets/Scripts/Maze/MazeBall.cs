@@ -6,6 +6,9 @@ public class MazeBall : MonoBehaviour {
     bool active;
 
     public Transform target;
+    public AudioSource buzzer;
+    public AudioSource coin;
+    
     Transform handTarget;
 
     public Material colorActive;
@@ -17,6 +20,8 @@ public class MazeBall : MonoBehaviour {
 	void Start ()
     {
         this.setActive(false);
+        this.coin.volume = 1;
+        this.buzzer.volume = 1;
 	}
 	
 	// Update is called once per frame
@@ -45,7 +50,6 @@ public class MazeBall : MonoBehaviour {
         if (other.gameObject.tag == "wall")
         {
             this.setActive(false);
-            //TODO : bruit d'échec
         }
     }
 
@@ -57,17 +61,29 @@ public class MazeBall : MonoBehaviour {
         }
         else if (other.gameObject.name == "FinishZone")
         {
-            //TODO: afficher quelque chose, faire un bruit, j'en sais rien
+            //TODO: afficher quelque chose
+            this.coin.Play();
             this.setActive(false);
         }
     }
 
     public void setActive(bool active)
     {
-        this.active = active;
-        if (this.active)
-            this.GetComponent<Renderer>().material = colorActive;
-        else
-            this.GetComponent<Renderer>().material = colorInactive;
+    	if (this.active != active)
+    	{
+			this.active = active;
+			if (this.active)
+			{
+				this.GetComponent<Renderer>().material = colorActive;
+				
+			}
+			else
+			{
+				this.buzzer.Play();
+				this.GetComponent<Renderer>().material = colorInactive;
+			}
+				
+    	}
+        
     }
 }

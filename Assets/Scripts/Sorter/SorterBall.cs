@@ -7,6 +7,7 @@ public class SorterBall : MonoBehaviour
 
     // public variables
     public float killAltitude;
+    public AudioSource buzzer;
 
     // private variables
     SorterColors.BallColor color;
@@ -20,13 +21,19 @@ public class SorterBall : MonoBehaviour
             Debug.Log("SorterBall : couldn't find gamemode");
 
         this.gameObject.name = "SorterBall";
+        
+		buzzer = GameObject.Find("Buzzer").GetComponent<AudioSource>();
    	}
 	
 	// Update is called once per frame 
 	void Update ()
     {
         if (this.transform.position.y < killAltitude)
-            Destroy(this.gameObject);
+        {
+        	this.buzzer.Play();
+			Destroy(this.gameObject);
+        }
+        
 	}
 
     public void setColor(SorterColors.BallColor color, Material m)
