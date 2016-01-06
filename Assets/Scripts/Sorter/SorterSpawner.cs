@@ -8,6 +8,7 @@ public class SorterSpawner : MonoBehaviour
 
     public GameObject sorterBall; // Reference to the ball
     public float delaySpawn;
+    public bool delayFirst;
     //public SorterColors.BallColor color;
 
     float timeBeforeNextSpawn;
@@ -25,14 +26,19 @@ public class SorterSpawner : MonoBehaviour
 	void Update ()
     {
         this.timeBeforeNextSpawn -= Time.deltaTime;
-
-        if (this.timeBeforeNextSpawn < 0.0f)
+	
+		if (this.delayFirst)
+		{
+			delayFirst = false;
+			this.timeBeforeNextSpawn = this.delaySpawn/2;
+		}
+        else if (this.timeBeforeNextSpawn < 0.0f)
         {
             this.timeBeforeNextSpawn = this.delaySpawn;
 
             SorterColors.BallColor c = sorterColors.getRandomColor();
             this.spawnBall(c);
-            Debug.Log("Spawning color " + c);
+            //Debug.Log("Spawning color " + c);
         }
 	}
 

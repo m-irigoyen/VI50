@@ -4,6 +4,7 @@ using System.Collections;
 public class SorterReceptor : MonoBehaviour
 {
     public SorterColors.BallColor color;
+    public AudioSource coin;
 
     SorterGamemode gameMode;
     SorterColors sorterColors;
@@ -16,6 +17,8 @@ public class SorterReceptor : MonoBehaviour
         sorterColors = gameMode.GetComponent<SorterColors>();
 
         this.GetComponent<Renderer>().material = sorterColors.getMaterial(color);
+        
+		coin = GameObject.Find("Coin").GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -31,6 +34,7 @@ public class SorterReceptor : MonoBehaviour
             if (other.gameObject.GetComponent<SorterBall>().getBallColor() == this.color)
             {
                 Debug.Log("SAME COLOR");
+                this.coin.Play();
                 Destroy(other.gameObject);
             }
         }
