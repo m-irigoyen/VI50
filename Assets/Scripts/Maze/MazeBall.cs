@@ -26,6 +26,18 @@ public class MazeBall : MonoBehaviour {
         targetPos *= positionOffset;
         targetPos.z = 10;
         this.transform.position = targetPos;
+
+        if (Input.GetButtonDown("Vertical"))
+        {
+            if(Input.GetAxis("Vertical") > 0)
+            {
+                positionOffset = positionOffset +5;
+            }
+            else
+            {
+                positionOffset = positionOffset - 5;
+            }
+        }
     }
 
     void OnTriggerEnter(Collider other)
