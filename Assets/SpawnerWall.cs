@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SpawnerWall : MonoBehaviour {
 
-    public Transform nextCanyon;
+    public GameObject nextCanyon;
 
     private GameObject lastCanyon;
 

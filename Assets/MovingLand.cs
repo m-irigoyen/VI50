@@ -5,6 +5,7 @@ public class MovingLand : MonoBehaviour {
     
     public Transform canyonPrefab;
     public float speed;
+    public float acceleration;
 
 	// Use this for initialization
 	void Start () {
@@ -25,5 +26,12 @@ public class MovingLand : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         this.transform.Translate(new Vector3(0, 0, -speed * Time.deltaTime));
+        this.speed = Mathf.Min(speed + Time.deltaTime * acceleration,500);
 	}
+
+    public void Stop()
+    {
+        this.speed = 0;
+        this.acceleration = 0;
+    }
 }
