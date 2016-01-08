@@ -30,8 +30,7 @@ public class SorterBall : MonoBehaviour
     {
         if (this.transform.position.y < killAltitude)
         {
-        	this.buzzer.Play();
-			Destroy(this.gameObject);
+            this.terminate();
         }
         
 	}
@@ -47,5 +46,11 @@ public class SorterBall : MonoBehaviour
     public SorterColors.BallColor getBallColor()
     {
         return this.color;
+    }
+
+    public void terminate()
+    {
+        this.buzzer.Play();
+        Destroy(this.gameObject);
     }
 }

@@ -37,6 +37,10 @@ public class SorterReceptor : MonoBehaviour
                 this.coin.Play();
                 Destroy(other.gameObject);
             }
+            else
+            {
+                other.gameObject.GetComponent<SorterBall>().terminate();
+            }
         }
     }
 }

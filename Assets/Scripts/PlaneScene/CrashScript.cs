@@ -18,7 +18,8 @@ public class CrashScript : MonoBehaviour {
         Debug.Log("Collision");
         if(collider.gameObject.tag == "Terrain")
         {
-            GameObject.Find("LandManager").GetComponent<MovingLand>().Stop(); ;
+            GameObject.Find("LandManager").GetComponent<MovingLand>().Stop();
+            GameObject.Find("Pop").GetComponent<AudioSource>().Play();
             Destroy(this.gameObject);
         }
     }
